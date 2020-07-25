@@ -10,8 +10,19 @@ protocol CanFly {
     func fly()
 }
 
+//Default implementation of the protocol method
+extension CanFly {
+    func fly() {
+        print("The object lifts off into the air.")
+    }
+}
+
 class Bird {
     var isFemaile = true
+    
+//    func fly() {
+//        print("The eagle flaps its wings and lifts off into the sky.")
+//    }
     
     func layEgg() {
         if isFemaile {
@@ -21,9 +32,9 @@ class Bird {
 }
 
 class Eagle: Bird, CanFly {
-    func fly() {
-        print("The eagle flaps its wings and lifts off into the sky.")
-    }
+//    func fly() {
+//        print("The eagle flaps its wings and lifts off into the sky.")
+//    }
     
     func soar() {
         print("The eagle glides in the air using air currents.")
@@ -43,14 +54,13 @@ struct FlyingMuseum {
 }
 
 struct Airplane: CanFly {
-    func fly() {
-        print("The airplane uses its engine to life off into the air.")
-    }
+//    func fly() {
+//        print("The airplane uses its engine to life off into the air.")
+//    }
 }
 
 let myEagle = Eagle()
 myEagle.fly()
-myEagle.layEgg()
 myEagle.soar()
 
 let myPenguin = Penguin()
@@ -64,4 +74,5 @@ museum.flyingDemo(flyingObject: myEagle)
 
 let myPlane = Airplane()
 museum.flyingDemo(flyingObject: myPlane)
+myPlane.fly()
 
